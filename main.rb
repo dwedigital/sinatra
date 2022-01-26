@@ -1,6 +1,8 @@
 require 'sinatra'
 
 get "/home" do
- time = Time.now.strftime("%d/%m/%Y %H:%M")
- return time
+    now = Time.now
+    weekdays = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
+    day = weekdays[now.wday]
+    return "Happy #{day}!"
 end
