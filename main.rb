@@ -1,8 +1,7 @@
 require 'sinatra'
 
 get "/home" do
-    now = Time.now
     weekdays = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
-    day = weekdays[now.wday]
+    day = weekdays[Time.now.wday]
     return "Happy #{day}!"
 end
